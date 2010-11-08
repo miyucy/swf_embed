@@ -5,6 +5,8 @@
   Swf.embed(File.read("/path/to/swf"), { "variable_name" => "value" })
   # => String
 
+see http://www.flash-jp.com/modules/newbb/viewtopic.php?viewmode=flat&order=DESC&topic_id=3414&forum=18
+
 == Note on Patches/Pull Requests
 
 * Fork the project.
