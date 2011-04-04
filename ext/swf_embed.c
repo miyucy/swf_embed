@@ -4,8 +4,18 @@
 #else
 #include <st.h>
 #endif
+#ifdef HAVE_STDINT_H
 #include <stdint.h>
+#endif
+#if defined HAVE_ENDIAN_H
 #include <endian.h>
+#elif defined HAVE_LIBKERN_OSBYTEORDER_H
+#include <libkern/OSByteOrder.h>
+#define htole16 OSSwapHostToLittleConstInt16
+#define htole32 OSSwapHostToLittleConstInt32
+#else
+#error "not defined htole16/htole32"
+#endif
 
 static void
 h16(VALUE str, int value)
